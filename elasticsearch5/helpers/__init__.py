@@ -374,6 +374,7 @@ def scan(client, query=None, scroll='5m', raise_on_error=True,
             if first_run:
                 first_run = False
             else:
+                resp = None
                 resp = client.scroll(scroll_id, scroll=scroll,
                                      request_timeout=request_timeout,
                                      **scroll_kwargs)
