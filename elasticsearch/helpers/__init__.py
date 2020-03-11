@@ -375,6 +375,7 @@ def scan(client, query=None, scroll='5m', raise_on_error=True,
                 first_run = False
             else:
                 resp = None
+                logger.info('Variable `resp` was set to None')
                 resp = client.scroll(scroll_id, scroll=scroll,
                                      request_timeout=request_timeout,
                                      **scroll_kwargs)
